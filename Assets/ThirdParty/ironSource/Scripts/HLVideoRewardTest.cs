@@ -12,6 +12,7 @@ public class HLVideoRewardTest : MonoBehaviour
 
 	private HLIronSourceVideoRequestService admobMediatorVideo;
     private bool isAds;
+    private int rewardCount;
     private bool isReward;
 
 	private void OnEnable()
@@ -41,8 +42,8 @@ public class HLVideoRewardTest : MonoBehaviour
 
     private void OnVideoComplete()
     {
-        lblReward.text = "Reward 1";
-        isReward = true;
+        rewardCount++;
+        lblReward.text = "Reward "+rewardCount;
         RefreshAdsStatus();
     }
 
